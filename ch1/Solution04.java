@@ -1,4 +1,3 @@
-package ch1;
 
 import java.util.HashMap;
 
@@ -12,6 +11,7 @@ public class Solution04 {
 	private static boolean palindromePermutation(String str) {
 		HashMap<Character, Integer> map = new HashMap<>();
 		
+		// find counts of all characters that are alphabetic
 		for (int i=0; i<str.length(); i++) {
 			char c = str.charAt(i);
 			if (!Character.isAlphabetic(c)) continue;
@@ -22,6 +22,7 @@ public class Solution04 {
 			}
 		}
 		
+		// Check for existence of at most one odd count
 		boolean foundOne = false;
 		for (Character c : map.keySet()) {
 			int count = map.get(c);

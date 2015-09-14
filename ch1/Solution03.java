@@ -1,4 +1,3 @@
-package ch1;
 
 public class Solution03 {
 
@@ -15,6 +14,7 @@ public class Solution03 {
 			i--;
 		}
 		
+		// Allocate required size
 		spaces -= (str.length()-i-1);
 		int newSize = i + spaces*2 + 1;
 		char[] newArray = new char[newSize];

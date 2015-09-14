@@ -1,14 +1,17 @@
-package ch2;
 
+class Node {
+	int data;
+	Node next;
+	
+	public Node(int num) {
+		this.data = num;
+		this.next = null;
+	}
+}
 public class Solution08 {
 	
-	private class Node {
-		int data;
-		Node next;
-	}
-
 	public static Node getLoopBeginning(Node head) {
-		Node fast = head, slow = head;
+		Node fast = head.next, slow = head;
 		
 		// find intersection 
 		while (fast != slow) {
@@ -40,6 +43,25 @@ public class Solution08 {
 		}
 		
 		return fast;
+	}
+	
+	public static void main(String[] args) {
+		Node head = new Node(1);
+		Node filler = head;
+		filler.next = new Node(1); filler = filler.next;
+		filler.next = new Node(2); filler = filler.next;
+		filler.next = new Node(3); filler = filler.next;
+		Node begin = filler;
+		filler.next = new Node(3); filler = filler.next;
+		filler.next = new Node(2); filler = filler.next;
+		filler.next = new Node(4); filler = filler.next;
+		filler.next = begin;
+		
+		Node beginning = getLoopBeginning(head);
+		
+		boolean correct = begin == beginning;
+		System.out.println("Beginning found is correct : " + correct);
+		
 	}
 
 }

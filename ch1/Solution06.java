@@ -1,5 +1,3 @@
-package ch1;
-
 public class Solution06 {
 
 	public static void main(String[] args) {
@@ -16,12 +14,16 @@ public class Solution06 {
 			if (str.charAt(i) == prev) {
 				count++;
 			} else {
+				// Found total count of consecutive characters
+				// add to compressed string
 				sb.append(str.charAt(i-1));
 				sb.append(String.valueOf(count));
 				prev = str.charAt(i);
 				count = 1;
 			}
 		}
+		
+		// Add the last character and count
 		sb.append(prev);
 		sb.append(String.valueOf(count));
 		return sb.toString();

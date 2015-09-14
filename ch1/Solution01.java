@@ -15,8 +15,10 @@
             char c = str.charAt(i);
             int number = c - 'a';
             if ((bitmap & 1 << number) != 0) {
+                // character already exists;
                 return false;
             }
+            // mark appropriate character as present
             bitmap |= 1<< number;
 
         }

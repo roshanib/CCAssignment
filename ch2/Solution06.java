@@ -1,13 +1,16 @@
-package ch2;
-
 import java.util.Stack;
 
-public class Solution06 {
+class Node {
+	int data;
+	Node next;
 	
-	private class Node {
-		int data;
-		Node next;
+	public Node(int num) {
+		this.data = num;
+		this.next = null;
 	}
+}
+
+public class Solution06 {
 
 	public static boolean isPalindrome(Node head) {
 		Stack<Integer> st = new Stack<>();
@@ -22,7 +25,7 @@ public class Solution06 {
 		}
 		
 		// for odd length
-		if (fast.next != null) slow = slow.next;
+		if (fast != null) slow = slow.next;
 		
 		// compare now
 		while (slow != null) {
@@ -33,5 +36,23 @@ public class Solution06 {
 		
 		return true;
 	}
-
+	
+	public static void main(String[] args) {
+		Node head = new Node(1);
+		Node filler = head;
+		filler.next = new Node(1); filler = filler.next;
+		filler.next = new Node(2); filler = filler.next;
+		filler.next = new Node(3); filler = filler.next;
+		filler.next = new Node(2); filler = filler.next;
+		filler.next = new Node(1); filler = filler.next;
+		filler.next = new Node(1); filler = filler.next;
+		
+		Node cur = head;
+		while (cur != null) {
+			System.out.print(cur.data + " ");
+			cur = cur.next;
+		}
+		System.out.println();
+		System.out.println(isPalindrome(head));
+	}
 }

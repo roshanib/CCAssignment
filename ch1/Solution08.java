@@ -1,5 +1,3 @@
-package ch1;
-
 public class Solution08 {
 
 	public static void main(String[] args) {
@@ -25,6 +23,7 @@ public class Solution08 {
 		int[] rows = new int[rowLen];
 		int[] cols = new int[coLen];
 		
+		// Mark all rows and columns needed to be made zero
 		for (int i=0; i<matrix.length; i++) {
 			for (int j=0; j<matrix[0].length; j++) {
 				if (matrix[i][j] == 0) {
@@ -33,7 +32,7 @@ public class Solution08 {
 				}
 			}
 		}
-		
+		// Mark complete rows zero
 		for (int i=0; i<rowLen; i++) {
 			if (rows[i] == 1) {
 				for (int j=0; j<coLen; j++) {
@@ -42,6 +41,7 @@ public class Solution08 {
 			}
 		}
 		
+		// Mark complete columns zero
 		for (int i=0; i<coLen; i++) {
 			if (cols[i] == 1) {
 				for (int j=0; j<rowLen; j++) {

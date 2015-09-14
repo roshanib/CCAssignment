@@ -1,9 +1,10 @@
-package ch1;
-
 public class Solution07 {
 
 	public static void main(String[] args) {
-		int[][] matrix = { {1, 2}, {3, 4} };
+		int[][] matrix = { 
+				{1, 2}, 
+				{3, 4} 
+				};
 		rotate(matrix);
 		for (int i=0; i<matrix.length; i++) {
 			for( int j=0; j<matrix.length; j++) {
